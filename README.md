@@ -6,8 +6,12 @@
   <img src="https://img.shields.io/github/stars/axe01010/adb-mcp?style=for-the-badge&color=22D3EE&logo=github" />
   <img src="https://img.shields.io/github/license/axe01010/adb-mcp?style=for-the-badge&color=22D3EE&logo=android" />
   <img src="https://img.shields.io/github/languages/top/axe01010/adb-mcp?style=for-the-badge&color=3DDC84" />
+  <img src="https://img.shields.io/github/actions/workflow/status/axe01010/adb-mcp/ci.yml?style=for-the-badge&color=22D3EE&logo=githubactions&logoColor=white&label=CI" />
   <img src="https://img.shields.io/badge/MCP-ready-2563EB?style=for-the-badge&logo=modelcontextprotocol&logoColor=white" />
 </p>
+
+> [!TIP]
+> **A single star is the cheapest thank-you** — ⭐ the repo if this is useful. It's the only thing that helps other people find it.
 
 # 🤖 adb-mcp — Let AI agents drive your Android phone
 
