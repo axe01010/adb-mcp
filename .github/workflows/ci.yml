@@ -1,0 +1,34 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  test:
+    name: unit tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - name: Install
+        run: uv sync
+      - name: Run tests
+        run: uv run pytest -q
+
+  build:
+    name: packaging
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - name: Build wheel
+        run: uv build
+      - name: Check wheel imports
+        run: |
+          uv pip install --system dist/*.whl
+          python -c "from adb_mcp.server import main; from adb_mcp.adb import Adb, MockAdb; print('imports OK')"
