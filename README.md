@@ -103,3 +103,17 @@ adb-mcp/
 </p>
 
 <div align="center">Built for the <b>Free On-Device AI DevKit</b> — private AI that runs entirely on a phone.</div>
+
+## Architecture
+
+```mermaid
+flowchart LR
+    Agent[Any AI Agent] <--> MCP[MCP stdio]
+    MCP --> adbc{adb-mcp server}
+    adbc --> Shell[adb shell]
+    Shell --> Phone((Android Phone))
+    Phone --> T[tap / swipe / screencap]
+    Phone --> A[install / launch]
+    Phone --> L[logcat]
+    Phone --> P[packages]
+```
